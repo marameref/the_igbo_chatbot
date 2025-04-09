@@ -32,6 +32,11 @@ class ChatRequest(BaseModel):
 def read_root():
     return {"message": "Welcome to the Igbo Chatbot API"}
 
+def get_chat_response(query: str):
+    print(f"User query received: {query}")  # Log incoming queries
+    response = chatbot.get_response(query)
+    return {"response": response}
+
 @app.post("/chat")
 def get_chat_response(request: ChatRequest):
     """

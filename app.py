@@ -14,7 +14,7 @@ if st.button("Send") and user_input:
     # Call the local FastAPI/Flask backend (Step 4)
     try:
         response = requests.post(
-            "http://localhost:8501/chat",  # replace with your actual endpoint
+            "http://localhost:8000/chat",  # replace with your actual endpoint
             json={"user_input": user_input}
         )
         if response.status_code == 200:
